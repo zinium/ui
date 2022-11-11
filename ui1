@@ -1649,30 +1649,51 @@ local lcalplr = game.Players.LocalPlayer
 local tween = game:GetService("TweenService")
 local character = game.Players.LocalPlayer.character
 local humanoid = character.HumanoidRootPart
-local ismakinghoney = false
-local selectedfield = "Dandelion Field"
-local autofarm = false
-local autosell = false
 
+local win = UILib:Window("Sakura Hub",Color3.fromRGB(255, 209, 220), Enum.KeyCode.RightControl)
 
-local function tptobase()
-    for i, v in next, game.Workspace.Honeycombs:GetChildren() do
-        for g, c in next, v:GetChildren() do
-            if c:IsA("Part") and c.Name == "Display" then
-                if c.Gui.Frame.OwnerName.Text == lcalplr.Name then
-                    for d, x in next, v:GetChildren() do
-                        if x:IsA("Part") and x.Name == "LightHolder" then
-                            tween:Create(humanoid, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = x.CFrame}):Play()
-                            wait(1)
-                            game:GetService("ReplicatedStorage").Events.PlayerHiveCommand:FireServer("ToggleHoneyMaking")
-                        end
-                    end
-                end
-            end
-        end
-    end
-end
+if game.PlaceId == 4483381587 then
+local ScriptSection = win:Tab("A Literal Baseplate.")
 
-local function tptofield()
-            tween:Create(humanoid, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = game:GetService("Workspace").FlowerZones[selectedfield].CFrame}):Play()
+ScriptSection:Button("Sit", function()
+    local string_1 = "sit";
+    local Target = game:GetService("ReplicatedStorage").PlayEmote;
+    Target:Fire(string_1);
+end)
+
+ScriptSection:Button("Zombie", function()
+    local string_1 = "zombie";
+    local Target = game:GetService("ReplicatedStorage").PlayEmote;
+    Target:Fire(string_1);
+end)
+
+ScriptSection:Button("Spray", function()
+    local string_1 = "SprayPaint";
+    local Target = game:GetService("ReplicatedStorage").PlayEmote;
+    Target:Fire(string_1);
+end)
+
+ScriptSection:Button("Dab", function()
+    local string_1 = "dab";
+    local Target = game:GetService("ReplicatedStorage").PlayEmote;
+    Target:Fire(string_1);
+end)
+
+ScriptSection:Button("Ninja", function()
+    local string_1 = "ninja";
+    local Target = game:GetService("ReplicatedStorage").PlayEmote;
+    Target:Fire(string_1);
+end)
+
+ScriptSection:Button("Floss", function()
+    local string_1 = "floss";
+    local Target = game:GetService("ReplicatedStorage").PlayEmote;
+    Target:Fire(string_1);
+end)
+
+ScriptSection:Button("Zen", function()
+    local string_1 = "zen";
+    local Target = game:GetService("ReplicatedStorage").PlayEmote;
+    Target:Fire(string_1);
+end)
 end
